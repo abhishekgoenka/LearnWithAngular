@@ -1,0 +1,12 @@
+<h1 class="mt-5" style="margin-top: 80px !important">
+  <p>Posts</p>
+</h1>
+
+<div *ngIf="loading(); else content">Loading...</div>
+
+<ng-template #content>
+  <div *ngFor="let post of posts()">
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.body }}</p>
+  </div>
+</ng-template>
