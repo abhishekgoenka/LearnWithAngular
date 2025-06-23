@@ -9,8 +9,8 @@ export const routes: Routes = [
   {
     path: "posts",
     loadComponent: () =>
-      import("./features/posts/show-all-posts/show-all-posts").then(
-        (m) => m.ShowAllPosts
+      import("./features/posts/components/post-list.component").then(
+        (m) => m.PostListComponent
       )
   }
 ];
