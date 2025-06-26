@@ -12,5 +12,35 @@ export const routes: Routes = [
       import("./features/posts/components/post-list.component").then(
         (m) => m.PostListComponent
       )
+  },
+  {
+    path: "auth",
+    loadComponent: () =>
+      import("./features/auth/components/home.component").then(
+        (m) => m.HomeComponent
+      ),
+    children: [
+      {
+        path: "login",
+        loadComponent: () =>
+          import("./features/auth/components/login.component").then(
+            (m) => m.LoginComponent
+          )
+      },
+      {
+        path: "user",
+        loadComponent: () =>
+          import("./features/auth/components/user.component").then(
+            (m) => m.UserComponent
+          )
+      },
+      {
+        path: "logout",
+        loadComponent: () =>
+          import("./features/auth/components/logout.component").then(
+            (m) => m.LogoutComponent
+          )
+      }
+    ]
   }
 ];
