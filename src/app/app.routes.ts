@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { authGuard } from "./core/guards/auth-guard";
 
 export const routes: Routes = [
   {
@@ -32,7 +33,8 @@ export const routes: Routes = [
         loadComponent: () =>
           import("./features/auth/components/user.component").then(
             (m) => m.UserComponent
-          )
+          ),
+        canActivate: [authGuard]
       },
       {
         path: "logout",

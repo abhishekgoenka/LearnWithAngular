@@ -16,7 +16,7 @@ import { CommonModule } from "@angular/common";
       Logout
     </button>
     } @else {
-    <h2>Please log in to see the current user</h2>
+    <h2>Please log in to logout</h2>
     }
   `
 })
